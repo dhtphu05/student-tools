@@ -22,7 +22,8 @@ def divide(first: object, second: object) -> float:
     """Return the quotient of two numbers.
 
     Raises:
-        ValueError: If ``second`` is zero.
+        ValueError: If ``first`` or ``second`` is not a valid number,
+            or if ``second`` is zero.
     """
     first_number = validate_number(first, "first")
     second_number = validate_number(second, "second")
