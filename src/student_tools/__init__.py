@@ -1,6 +1,6 @@
 """Small, dependency-free utilities for students."""
 
-from .calculator import add, divide, multiply, subtract
+from .calculator import DivisionByZeroError, add, divide, multiply, subtract
 from .converter import (
     celsius_to_fahrenheit,
     fahrenheit_to_celsius,
@@ -10,6 +10,7 @@ from .converter import (
 from .validator import is_non_empty, is_number
 
 __all__ = [
+    "DivisionByZeroError",
     "add",
     "divide",
     "multiply",

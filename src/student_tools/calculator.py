@@ -1,6 +1,11 @@
 """Basic calculator operations."""
 
 
+class DivisionByZeroError(ValueError, ZeroDivisionError):
+    """Raised when division by zero is attempted in calculator operations."""
+    pass
+
+
 def add(first: float, second: float) -> float:
     """Return the sum of two numbers."""
     return first + second
@@ -20,9 +25,13 @@ def divide(first: float, second: float) -> float:
     """Return the quotient of two numbers.
 
     Raises:
-        ValueError: If ``second`` is zero.
+        DivisionByZeroError: If ``second`` is zero.
+        ValueError: As ``DivisionByZeroError`` inherits from ``ValueError``.
     """
-    if second == 0:
-        raise ValueError("cannot divide by zero")
-    return first / second
+    if second == 0 or second == -0.0:
+        raise DivisionByZeroError("cannot divide by zero")
+    try:
+        return first / second
+    except ZeroDivisionError as exc:
+        raise DivisionByZeroError("cannot divide by zero") from exc
 
