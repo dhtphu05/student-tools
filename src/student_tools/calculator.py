@@ -28,10 +28,7 @@ def divide(first: float, second: float) -> float:
         DivisionByZeroError: If ``second`` is zero.
         ValueError: As ``DivisionByZeroError`` inherits from ``ValueError``.
     """
-    if second == 0 or second == -0.0:
+    if second == 0:
         raise DivisionByZeroError("cannot divide by zero")
-    try:
-        return first / second
-    except ZeroDivisionError as exc:
-        raise DivisionByZeroError("cannot divide by zero") from exc
+    return first / second
 
