@@ -58,6 +58,15 @@ kilometers_to_miles(10)
 miles_to_kilometers(10)
 ```
 
+### Length Conversion
+
+```python
+from student_tools.converter import kilometers_to_meters, meters_to_kilometers
+
+meters_to_kilometers(1000)  # 1.0
+kilometers_to_meters(1)     # 1000
+```
+
 ## Validator
 
 ```python

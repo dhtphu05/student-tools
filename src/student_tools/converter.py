@@ -40,3 +40,13 @@ def miles_to_kilometers(miles: float) -> float:
     """Convert miles to kilometers."""
     return miles / 0.621371
 
+
+def meters_to_kilometers(meters: float) -> float:
+    """Convert meters to kilometers."""
+    return meters / 1000
+
+
+def kilometers_to_meters(kilometers: float) -> float:
+    """Convert kilometers to meters."""
+    return kilometers * 1000
+

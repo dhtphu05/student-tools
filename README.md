@@ -6,7 +6,7 @@ Student Tools là một bộ tiện ích Python nhỏ phục vụ việc học t
 
 - Các phép tính cơ bản: cộng, trừ, nhân, chia.
 - Đổi nhiệt độ giữa Celsius, Fahrenheit và Kelvin.
-- Đổi khoảng cách giữa kilomet và mile.
+- Đổi khoảng cách giữa kilomet và mile, mét và kilomet.
 - Kiểm tra dữ liệu số và chuỗi không rỗng.
 
 ## Converter
