@@ -19,6 +19,8 @@ divide(6, 3)     # 2.0
 
 `divide` raises `DivisionByZeroError` (kế thừa từ `ValueError` và `ZeroDivisionError`) với thông báo `cannot divide by zero` khi mẫu số bằng 0.
 
+Tất cả các phép toán (`add`, `subtract`, `multiply`, `divide`) đều validate đầu vào và raise `ValueError` với thông báo `invalid numeric input: ...` khi tham số không phải số hợp lệ (ví dụ chuỗi không phải số, `None`, `inf`).
+
 ## Converter Usage
 
 ### Temperature Conversion
@@ -61,6 +63,15 @@ from student_tools.converter import kilometers_to_miles, miles_to_kilometers
 
 kilometers_to_miles(10)
 miles_to_kilometers(10)
+```
+
+### Length Conversion
+
+```python
+from student_tools.converter import kilometers_to_meters, meters_to_kilometers
+
+meters_to_kilometers(1000)  # 1.0
+kilometers_to_meters(1)     # 1000
 ```
 
 ## Validator

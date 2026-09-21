@@ -27,7 +27,8 @@ def divide(first: object, second: object) -> float:
 
     Raises:
         DivisionByZeroError: If ``second`` is zero.
-        ValueError: As ``DivisionByZeroError`` inherits from ``ValueError``.
+        ValueError: If ``first`` or ``second`` is not a valid number,
+            or as ``DivisionByZeroError`` inherits from ``ValueError``.
     """
     first_number = validate_number(first, "first")
     second_number = validate_number(second, "second")

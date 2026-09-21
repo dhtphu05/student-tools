@@ -48,6 +48,22 @@ class CalculatorTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "first must be a finite number"):
             add("not a number", 3)
 
+    def test_invalid_numeric_input_raises_meaningful_error(self):
+        with self.assertRaisesRegex(ValueError, "first must be a finite number"):
+            add("abc", 2)
+        with self.assertRaisesRegex(ValueError, "second must be a finite number"):
+            subtract(1, None)
+        with self.assertRaisesRegex(ValueError, "first must be a finite number"):
+            multiply(float("inf"), 2)
+        with self.assertRaisesRegex(ValueError, "first must be a finite number"):
+            divide("x", "10")
+
+    def test_numeric_strings_are_coerced_before_operation(self):
+        self.assertEqual(add("10", 2), 12)
+        self.assertEqual(subtract("5", "3"), 2)
+        self.assertEqual(multiply("2", 3), 6)
+        self.assertEqual(divide("10", "2"), 5)
+
 
 if __name__ == "__main__":
     unittest.main()
