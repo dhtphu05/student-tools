@@ -3,7 +3,13 @@
 ## Calculator
 
 ```python
-from student_tools.calculator import add, divide, multiply, subtract
+from student_tools.calculator import (
+    DivisionByZeroError,
+    add,
+    divide,
+    multiply,
+    subtract,
+)
 
 add(2, 3)       # 5
 subtract(5, 3)  # 2
@@ -11,7 +17,7 @@ multiply(2, 3)   # 6
 divide(6, 3)     # 2.0
 ```
 
-`divide` raises `ValueError` với thông báo `cannot divide by zero` khi mẫu số bằng 0.
+`divide` raises `DivisionByZeroError` (kế thừa từ `ValueError` và `ZeroDivisionError`) với thông báo `cannot divide by zero` khi mẫu số bằng 0.
 
 ## Converter
 
