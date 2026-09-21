@@ -3,7 +3,13 @@
 ## Calculator
 
 ```python
-from student_tools.calculator import add, divide, multiply, subtract
+from student_tools.calculator import (
+    DivisionByZeroError,
+    add,
+    divide,
+    multiply,
+    subtract,
+)
 
 add(2, 3)       # 5
 subtract(5, 3)  # 2
@@ -11,7 +17,7 @@ multiply(2, 3)   # 6
 divide(6, 3)     # 2.0
 ```
 
-`divide` raises `ValueError` với thông báo `cannot divide by zero` khi mẫu số bằng 0.
+`divide` raises `DivisionByZeroError` (kế thừa từ `ValueError` và `ZeroDivisionError`) với thông báo `cannot divide by zero` khi mẫu số bằng 0.
 
 Tất cả các phép toán (`add`, `subtract`, `multiply`, `divide`) đều validate đầu vào và raise `ValueError` với thông báo `invalid numeric input: ...` khi tham số không phải số hợp lệ (ví dụ chuỗi không phải số, `None`, `inf`).
 
@@ -21,6 +27,7 @@ Tất cả các phép toán (`add`, `subtract`, `multiply`, `divide`) đều val
 
 Convert Celsius to Fahrenheit:
 
+```python
 from student_tools.converter import (
     celsius_to_fahrenheit,
     celsius_to_kelvin,
