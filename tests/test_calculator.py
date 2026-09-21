@@ -43,7 +43,11 @@ class CalculatorTests(unittest.TestCase):
         with self.assertRaisesRegex(DivisionByZeroError, "cannot divide by zero"):
             divide(0, 0)
 
+    def test_operations_validate_numeric_input(self):
+        self.assertEqual(add("2", 3), 5)
+        with self.assertRaisesRegex(ValueError, "first must be a finite number"):
+            add("not a number", 3)
+
 
 if __name__ == "__main__":
     unittest.main()
-

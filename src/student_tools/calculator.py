@@ -1,34 +1,36 @@
 """Basic calculator operations."""
 
+from .validator import validate_number
 
 class DivisionByZeroError(ValueError, ZeroDivisionError):
     """Raised when division by zero is attempted in calculator operations."""
     pass
 
 
-def add(first: float, second: float) -> float:
+def add(first: object, second: object) -> float:
     """Return the sum of two numbers."""
-    return first + second
+    return validate_number(first, "first") + validate_number(second, "second")
 
 
-def subtract(first: float, second: float) -> float:
+def subtract(first: object, second: object) -> float:
     """Return the difference between two numbers."""
-    return first - second
+    return validate_number(first, "first") - validate_number(second, "second")
 
 
-def multiply(first: float, second: float) -> float:
+def multiply(first: object, second: object) -> float:
     """Return the product of two numbers."""
-    return first * second
+    return validate_number(first, "first") * validate_number(second, "second")
 
 
-def divide(first: float, second: float) -> float:
+def divide(first: object, second: object) -> float:
     """Return the quotient of two numbers.
 
     Raises:
         DivisionByZeroError: If ``second`` is zero.
         ValueError: As ``DivisionByZeroError`` inherits from ``ValueError``.
     """
-    if second == 0:
+    first_number = validate_number(first, "first")
+    second_number = validate_number(second, "second")
+    if second_number == 0:
         raise DivisionByZeroError("cannot divide by zero")
-    return first / second
-
+    return first_number / second_number
